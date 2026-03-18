@@ -10,7 +10,7 @@
 	"name": "Mod Title Ror",
 	"version": "0.0.1",
 	"developer": "Null",
-	"description": "This is a description, lol.",
+	"description": "Fire in the hole",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	}
