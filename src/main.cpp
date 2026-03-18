@@ -36,7 +36,4 @@ void showMyAlert(float dt) {
             "OK"
         )->show(); 
     };
-    
-    return true;
-
 };
