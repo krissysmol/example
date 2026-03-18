@@ -29,7 +29,14 @@ void showMyAlert(float dt) {
     alert->show();
 }
 
-
+    void onMoreGames(CCObject* target) {
+        FLAlertLayer::create(
+            "Geode",
+            "Hello World from my Custom Mod!",
+            "OK"
+        )->show(); 
+    }
+    
     return true;
 }
 
