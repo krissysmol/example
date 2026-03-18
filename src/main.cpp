@@ -7,7 +7,7 @@
 using namespace geode::prelude; // Saves you from typing 'geode::' before every command.
 
 // This line tells Geode: "I want to add my own logic to the MenuLayer class."
-class $modify(MenuLayer) {
+class $modify(MyMenuClass, MenuLayer) {
     
     // 'init' is the function that runs when the menu is first created.
 bool init() {
