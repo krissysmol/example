@@ -38,6 +38,5 @@ void showMyAlert(float dt) {
     };
     
     return true;
-}
 
 };
