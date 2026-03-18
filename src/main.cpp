@@ -13,13 +13,22 @@ class $modify(MenuLayer) {
 bool init() {
     if (!MenuLayer::init()) return false;
 
-    // This creates a popup box right on your screen!
+    // We use a "lambda" (a tiny function) to run the alert later
+    this->scheduleOnce(schedule_selector(MyMenuClass::showMyAlert), 0.5f);
+
+    return true;
+}
+
+// We need to define this function inside your $modify(MenuLayer) class
+void showMyAlert(float dt) {
     auto alert = FLAlertLayer::create(
-        "Acode Success!",    // Title
-        "My mod is working!", // Message
-        "OK"                 // Button text
+        "Acode Success!", 
+        "My mod is working and staying open!", 
+        "OK"
     );
     alert->show();
+}
+
 
     return true;
 }
