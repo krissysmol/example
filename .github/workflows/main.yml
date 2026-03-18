@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "Geode v5.3"
+      - "minimal"
 
 jobs:
   build:
