@@ -8,7 +8,7 @@
 	},
 	"id": "example.hello",
 	"name": "Mod Title Ror",
-	"version": "v0.0.1",
+	"version": "0.0.1",
 	"developer": "Null",
 	"description": "This is a description, lol.",
 	"dependencies": {
