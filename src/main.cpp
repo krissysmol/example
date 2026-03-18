@@ -35,7 +35,7 @@ void showMyAlert(float dt) {
             "Hello World from my Custom Mod!",
             "OK"
         )->show(); 
-    }
+    };
     
     return true;
 }
