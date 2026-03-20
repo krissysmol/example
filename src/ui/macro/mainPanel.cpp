@@ -1,4 +1,4 @@
-#include "MainPanel.hpp"
+#include "mainPanel.hpp"
 
 bool MainPanel::setup() {
     this->setTitle("Macro Panel");
