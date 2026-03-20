@@ -15,11 +15,6 @@ else()
     message(STATUS "Found Geode: $ENV{GEODE_SDK}")
 endif()
 
-# Add this right before add_subdirectory
-if (NOT DEFINED GEODE_TARGET_PLATFORM)
-    set(GEODE_TARGET_PLATFORM $ENV{GEODE_TARGET_PLATFORM})
-endif()
-
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
