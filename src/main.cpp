@@ -1,27 +1,23 @@
 #include <Geode/Geode.hpp>
-#include <Geode/modify/PauseLayer.hpp>
-#include "ui/macro/mainPanel.hpp" // <--- IMPORTANT: Include your new header!
+#include <Geode/modify/MenuLayer.hpp>
 
 using namespace geode::prelude;
 
-class $modify(MyPauseLayer, PauseLayer) {
-    void onMacroBtn(CCObject* sender) {
-        // Now just call the custom class
-        mainPanel::create()->show();
-    }
-
+class $modify(MyMenuLayer, MenuLayer) {
     bool init() {
-        if (!PauseLayer::init()) return false;
+        if (!MenuLayer::init()) return false;
 
-        auto menu = this->getChildByID("left-button-menu");
-        if (menu) {
-            auto btnSprite = CCSprite::createWithSpriteFrameName("GJ_plainBtn_001.png");
-            auto btn = CCMenuItemSpriteExtra::create(
-                btnSprite, this, menu_selector(MyPauseLayer::onMacroBtn)
-            );
-            menu->addChild(btn);
-            menu->updateLayout();
-        }
+        // Verify the mod is working in the console
+        log::info("Hello from my clean mod!");
+
+        // Show a one-time welcome message
+        auto alert = FLAlertLayer::create(
+            "Mod Loaded",
+            "Your clean template is running!",
+            "OK"
+        );
+        alert->show();
+
         return true;
     }
 };
