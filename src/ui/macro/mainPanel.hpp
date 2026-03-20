@@ -4,12 +4,12 @@
 using namespace geode::prelude;
 
 // Define the class here so other files can see it
-class MainPanel : public Popup<> {
+class mainPanel : public Popup<> {
 protected:
     // This is where will build the UI
     bool setup() override;
 
 public:
     // The function call to open the menu
-    static MainPanel* create();
+    static mainPanel* create();
 };
