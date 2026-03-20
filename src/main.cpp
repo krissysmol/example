@@ -4,7 +4,9 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, MenuLayer) {
-	void onMenuLoaded() {
+	void onEnter() {
+		//essential for menu to load
+		MenuLayer::onEnter();
 		// Show a one-time welcome message
 		auto alert = FLAlertLayer::create(
 			"Mod Loaded",
@@ -12,11 +14,6 @@ class $modify(MyMenuLayer, MenuLayer) {
 			"OK"
 		); //this is just a variable, nothing to be scared about...
 		alert->show(); // the remote with modifier of the variable, show means showing it basically.
-	};
-	void onEnter() {
-		//essential for menu to load
-		MenuLayer::onEnter();
-		this->scheduleOnce(schedule_selector(MyMenuLayer::onMenuLoaded), 0.1f); //always that schedule_selector, then what class and function to call, and time(f for floating point as 0.1 seconds). function from cocos class
 	};
 	//init function, if called return
 	bool init() {
