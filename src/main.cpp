@@ -1,13 +1,13 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/PauseLayer.hpp>
-#include "ui/macro/MainPanel.hpp" // <--- IMPORTANT: Include your new header!
+#include "ui/macro/mainPanel.hpp" // <--- IMPORTANT: Include your new header!
 
 using namespace geode::prelude;
 
 class $modify(MyPauseLayer, PauseLayer) {
     void onMacroBtn(CCObject* sender) {
         // Now just call the custom class
-        MainPanel::create()->show();
+        mainPanel::create()->show();
     }
 
     bool init() {
