@@ -4,7 +4,7 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, MenuLayer) {
-	void onMenuLoaded(float dt) {
+	void onMenuLoaded() {
 		// Show a one-time welcome message
 		auto alert = FLAlertLayer::create(
 			"Mod Loaded",
