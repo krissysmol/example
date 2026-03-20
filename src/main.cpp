@@ -4,20 +4,21 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, MenuLayer) {
+	//init function, if called return
     bool init() {
-        if (!MenuLayer::init()) return false;
+        if (!MenuLayer::init()) return false; // Not initialized
 
         // Verify the mod is working in the console
-        log::info("Hello from my clean mod!");
+        log::info("Example Mod: The mod is working."); //send into the log files
 
         // Show a one-time welcome message
         auto alert = FLAlertLayer::create(
             "Mod Loaded",
             "Your clean template is running!",
             "OK"
-        );
-        alert->show();
+        ); //this is just a variable, nothing to be scared about...
+        alert->show(); // the remote with modifier of the variable, show means showing it basically.
 
-        return true;
+        return true; // Initialized
     }
 };
