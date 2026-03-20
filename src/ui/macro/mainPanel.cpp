@@ -1,6 +1,6 @@
 #include "mainPanel.hpp"
 
-bool MainPanel::setup() {
+bool mainPanel::setup() {
     this->setTitle("Macro Panel");
 
     auto winSize = CCDirector::get()->getWinSize();
