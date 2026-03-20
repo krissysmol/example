@@ -4,7 +4,7 @@
 using namespace geode::prelude;
 
 // Define the class here so other files can see it
-class mainPanel : public Popup<> {
+class mainPanel : public geode::Popup<> {
 protected:
     // This is where will build the UI
     bool setup() override;
