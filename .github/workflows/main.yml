@@ -25,20 +25,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      # --- FULLY AUTOMATIC CACHE ---
+
+      # --- CACHE SECTION START ---
       - name: Cache Build Objects
         uses: actions/cache@v4
         with:
           path: |
             build
             out
-          # The 'run_id' makes this key unique every single time you push
-          key: ${{ runner.os }}-${{ matrix.config.target }}-${{ github.run_id }}
-          # This tells GitHub: "If you don't find the 'run_id' key (which you won't), 
-          # just grab the most recent cache from this OS and Target."
+          # This 'key' tells GitHub: "If mod.json or CMakeLists change, throw away the old cache and start fresh"
+          key: ${{ runner.os }}-${{ matrix.config.target }}-${{ hashFiles('**/CMakeLists.txt', 'mod.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.config.target }}-
-      # --- END CACHE ---
+      # --- CACHE SECTION END ---
 
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
