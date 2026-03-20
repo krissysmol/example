@@ -14,8 +14,8 @@ bool mainPanel::setup() {
     return true;
 }
 
-MainPanel* MainPanel::create() {
-    auto ret = new MainPanel();
+mainPanel* mainPanel::create() {
+    auto ret = new mainPanel();
     // 250 is width, 180 is height
     if (ret && ret->initAnchored(250.f, 180.f)) {
         ret->autorelease();
