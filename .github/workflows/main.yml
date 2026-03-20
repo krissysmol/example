@@ -26,6 +26,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # --- CACHE SECTION START ---
+      - name: Cache Build Objects
+        uses: actions/cache@v4
+        with:
+          path: |
+            build
+            out
+          # This 'key' tells GitHub: "If mod.json or CMakeLists change, throw away the old cache and start fresh"
+          key: ${{ runner.os }}-${{ matrix.config.target }}-${{ hashFiles('**/CMakeLists.txt', 'mod.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.config.target }}-
+      # --- CACHE SECTION END ---
+
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
@@ -49,4 +62,3 @@ jobs:
         with:
           name: Build Output
           path: ${{ steps.build.outputs.build-output }}
-
