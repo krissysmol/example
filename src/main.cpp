@@ -2,8 +2,8 @@
 #include <Geode/modify/MenuLayer.hpp>
 
 using namespace geode::prelude;
-	class $modify(MyMenuLayer, MenuLayer) {
-	bool MyLayer::init() {
+class $modify(MyMenuLayer, MenuLayer) {
+	bool MyMenuLayer::init() {
 	// ...
 	auto spr = ButtonSprite::create("Hi mom!");
 	
@@ -13,4 +13,5 @@ using namespace geode::prelude;
 	
 	// ...
 	}
+	
 };
